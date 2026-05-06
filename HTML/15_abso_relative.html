@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Positioning notes can be moved inside the style block or external docs -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+      .card{
+        position: relative;
+        border: 2px solid black;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+      }
+
+       .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      } 
+
+      .badge{
+        position: absolute;
+        top: 10px;        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+</head>
+<body>
+<div class="card">
+   <span class="badge">Content  is added </span>
+   <h2> Java With React</h2>
+</div>    
+</body>
+</html>
+
+

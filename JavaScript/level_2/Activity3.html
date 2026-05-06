@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const salaries = [45000, 67000, 36000];
+        
+        const newSal = salaries.map(sal => sal + 1000);
+        document.writeln("New Salary :" + newSal + "<br>");
+
+
+        const hihlyPaidEmployees = salaries.filter(sal => sal > 50000);
+        document.writeln(`Highly paid employees :  ${hihlyPaidEmployees} <br>`);
+
+
+        const totalSal = salaries.reduce((sum, sal ) => sum + sal, 0);
+        document.writeln("Total salary of employees :" + totalSal);
+
+
+
+    </script>
+</body>
+</html>

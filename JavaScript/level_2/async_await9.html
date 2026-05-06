@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Users Example</title>
+</head>
+<body>
+
+<script>
+
+    // Ye function API se users ka data fetch karega
+    async function fetchUsers() {
+        try {
+            //  Yaha hum artificial delay laga rahe hain (5 sec) - sirf simulation ke liye
+            await new Promise(resolve => setTimeout(resolve, 5000));
+
+            //  API call (users data lene ke liye)
+            const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+            //  Agar response sahi nahi aaya to error throw karo
+            if (!response.ok) {
+                throw new Error("Users fetch karne mein problem aayi");
+            }
+
+            //  JSON data ko JavaScript object me convert karna
+            const data = await response.json();
+
+            //  Console me data show karna (debug ke liye)
+            console.log("API se data mila :", data);
+
+            //  Data return kar rahe hain (promise resolve hoga)
+            return data;
+
+        } catch (err) {
+            //  Error handling
+            console.error("Error aaya :", err);
+        }
+    }
+
+
+    //  Ye non-blocking tasks hain (fetch ke saath-saath chalenge)
+    console.log("Users fetch hone tak kuch aur kaam kar rahe hain...");
+
+    for (var i = 0; i <= 3; i++) {
+        console.log("Dusra kaam chal raha hai:", i);
+    }
+
+
+    //  Function call kar rahe hain
+    fetchUsers()
+
+    //  Jab data mil jaaye tab ye chalega
+    .then(data => {
+
+        console.log("Users data process ho raha hai :", data);
+
+        //  Har user ko loop karke display karenge
+        data.forEach(user => {
+
+            //  Screen par user ka naam aur email print karna
+            document.write(`<p>User Name : ${user.username} - Email : ${user.email}</p>`);
+
+        });
+    })
+
+    // Agar koi error aaye to handle karo
+    .catch(err => {
+        document.write(`<h3>Error aaya : ${err}</h3>`);
+    });
+
+</script>
+
+</body>
+</html>

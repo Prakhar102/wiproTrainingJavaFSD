@@ -1,0 +1,19 @@
+package com.dependencyinjection;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+@Primary
+@Service
+class TeamLead implements Allocator {
+	
+	TeamLead()
+	{
+		System.out.println("TeamLead Bean(object) created");
+	}
+	
+	public void taskAllocation(String user)
+	{
+		System.out.println("Task is allocated by : TeamLead to " + user);
+	}
+
+}

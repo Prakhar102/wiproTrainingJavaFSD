@@ -1,1 +1,2 @@
-
+For 10_SpringJdbcWithJdbcTemplate..............
+In MySQL , create a table named as Todo ---> id, Title, Description

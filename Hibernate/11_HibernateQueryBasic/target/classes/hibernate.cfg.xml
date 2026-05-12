@@ -1,0 +1,73 @@
+<!--
+    Hibernate Configuration File
+
+    This file contains:
+    - Database connection details
+    - Hibernate properties
+    - Entity mappings
+ -->
+<hibernate-configuration>
+    <session-factory>
+        <!--  =====================================================  -->
+        <!--  JDBC DATABASE CONNECTION PROPERTIES  -->
+        <!--  =====================================================  -->
+        <!--
+                    Database Driver Class
+
+                    MySQL JDBC driver used for DB connection
+                 -->
+        <property name="hibernate.connection.driver_class"> com.mysql.cj.jdbc.Driver </property>
+        <!--
+                    Database URL
+
+                    localhost     = current machine
+                    3306          = MySQL default port
+                    wipro_training = database name
+                 -->
+        <property name="hibernate.connection.url"> jdbc:mysql://localhost:3306/wipro_training </property>
+        <!--  Database Username  -->
+        <property name="hibernate.connection.username"> root </property>
+        <!--  Database Password  -->
+        <property name="hibernate.connection.password"> root </property>
+        <!--  =====================================================  -->
+        <!--  HIBERNATE PROPERTIES  -->
+        <!--  =====================================================  -->
+        <!--
+                    Dialect
+
+                    Hibernate generates SQL according
+                    to database type.
+
+                    MySQLDialect = SQL syntax for MySQL
+                 -->
+        <property name="hibernate.dialect"> org.hibernate.dialect.MySQLDialect </property>
+        <!--
+                    hbm2ddl.auto
+
+                    update:
+                    Automatically updates table schema.
+
+                    Other values:
+                    create
+                    create-drop
+                    validate
+                 -->
+        <property name="hibernate.hbm2ddl.auto"> update </property>
+        <!--
+                    show_sql
+
+                    true:
+                    Shows generated SQL in console.
+                 -->
+        <property name="hibernate.show_sql"> true </property>
+        <!--  =====================================================  -->
+        <!--  ENTITY CLASS MAPPING  -->
+        <!--  =====================================================  -->
+        <!--
+                    Mapping Student Entity Class
+                    with Hibernate
+                 -->
+        <mapping class="com.company.hibernateorm.entity.Product"/>
+        <mapping class="com.company.hibernateorm.entity.Category"/>
+    </session-factory>
+</hibernate-configuration>

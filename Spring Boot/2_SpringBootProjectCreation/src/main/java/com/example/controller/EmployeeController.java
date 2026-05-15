@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.bean.Employee;
 import com.example.service.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class EmployeeController {
 //        return "Employee Added Successfully";
 //    }
 
-    public ResponseEntity<Employee> addEmp(@RequestBody Employee emp){
+    public ResponseEntity<Employee> addEmp(@Valid @RequestBody Employee emp){
 
         Employee employee = employeeService.createEmp(emp);
         return new ResponseEntity<>(employee, HttpStatus.OK);
@@ -47,7 +48,7 @@ public class EmployeeController {
     }
 
 //    @GetMapping("/viewlall")
-//    public ResponseEntity<List<Employee>> getAllEmp() {
+//    public ResponseEntity<List<Employee>> getAllEmps() {
 //
 //    }
 }

@@ -1,0 +1,9 @@
+2026-05-15 [restartedMain] INFO  com.example.Application - Starting Application using Java 21.0.11 with PID 36436 (C:\Users\rs459\OneDrive\Documents\Intelij SpringBoot\SpringBootDemo\5_SpringBootAOP\target\classes started by rs459 in C:\Users\rs459\OneDrive\Documents\Intelij SpringBoot\SpringBootDemo\5_SpringBootAOP)
+2026-05-15 [restartedMain] INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
+2026-05-15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-15 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-05-15 [restartedMain] INFO  com.example.Application - Started Application in 1.037 seconds (process running for 1.653)
+2026-05-15 [restartedMain] INFO  com.example.aop.LoggingAop - Transaction support Started
+2026-05-15 [restartedMain] INFO  com.example.aop.LoggingAop - Transaction committed
+2026-05-15 [restartedMain] INFO  com.example.aop.LoggingAop - Transaction support Started
+2026-05-15 [restartedMain] INFO  com.example.aop.LoggingAop - Transaction committed
